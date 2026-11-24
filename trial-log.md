@@ -74,3 +74,21 @@ Near-duplicates rejected after mechanism check (not just keyword count):
 - Re-bundle v2 + re-check v2 pending; `thinking_revised` expected PASS,
   `thinking_priced` expected still FAIL (0 rows until run flushes) for the
   coordinator to close with `--muse-usage`.
+
+### Bundle v2 + check v2 — 24 Nov 2026 ~19:54 WITA
+- Bundle v2: `u-hazel-ibis-70-2844-last-words-before-the-unplugging-51acdd9c-bundle-v2.tar.gz`,
+  823,217 bytes, sha256 `a024200ac7fdb46f272ce881df6fe1317dd714686ec42062980fd44795530663`.
+  Still 0 usage rows attached (run not finished — expected).
+- Check v2 (commit `99b178ac28251cd20fd38c320e57814e5449c77e`):
+  **13 passed / 1 failed / 5 skipped / 5 at submission**.
+  - `thinking_revised` PASS — trial-log.md now from 2 write/edit messages.
+  - `thinking_reproduces` PASS 100.0% (108/108 counted lines authored).
+  - FAIL only `thinking_priced` — 0 usage rows; coordinator closes it by
+    re-bundling with `--muse-usage` after this run flushes (rows from
+    agent_id `a148fa2f-df81-45dc-a566-295aef793a02`).
+- Remote GitHub: STILL PENDING at check v2 — first `gh repo create`
+  rejected on the rolling rate limit; one retry after a 10–30 min pause
+  (see below). Push + About (homepage + topic `makefun` via PUT) depend
+  on the remote existing; they are submit-time checks, not build checks.
+- Status: BUILD DONE, ready for coordinator re-bundle + submit (no submit
+  by this builder).
